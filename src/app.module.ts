@@ -9,7 +9,9 @@ import { UserModule } from '@user/user.module';
       envFilePath: `.${process.env.NODE_ENV}.env`,
       isGlobal: true,
     }),
-    MongooseModule.forRoot(`${process.env.DB_LINK}`),
+    MongooseModule.forRoot(
+      'mongodb+srv://admin:admin@auth.uoyjs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+    ),
     UserModule,
   ],
 })

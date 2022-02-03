@@ -8,7 +8,9 @@ async function bootstrap() {
     {
       transport: Transport.RMQ,
       options: {
-        urls: [`${process.env.RMQ_LINK}`],
+        urls: [
+          'amqps://pbgtsdso:gsY-iq5vkBr804ghtNneQ4bwO8nx-nR8@hornet.rmq.cloudamqp.com/pbgtsdso',
+        ],
         noAck: false,
         queue: 'auth',
       },
