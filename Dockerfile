@@ -8,7 +8,7 @@ COPY yarn.lock ./
 
 RUN npm install
 
-COPY . .
+COPY ./ ./
 
 RUN npm run build
 
@@ -16,13 +16,13 @@ FROM node:alpine as production
 
 WORKDIR /usr/src/auth
 
-COPY package*.json .
+COPY package*.json ./
 
-COPY yarn.lock .
+COPY yarn.lock ./
 
 RUN npm install
 
-COPY . .
+COPY ./ ./
 
 COPY --from=development /usr/src/auth/dist  ./dist
 
