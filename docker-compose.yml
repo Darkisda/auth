@@ -19,22 +19,6 @@ services:
     volumes:
       - .:/usr/src/auth
     restart: unless-stopped
-  prod:
-    container_name: auth-prod
-    image: auth:1.0.0
-    env_file:
-      - .env
-    build:
-      context: .
-      target: production
-      dockerfile: ./Dockerfile
-    command: yarn start:prod
-    networks:
-      - default
-      - auth-network
-    volumes:
-      - .:/usr/src/auth
-    restart: unless-stopped
   mongodb:
     image : mongo:latest
     env_file:
