@@ -6,11 +6,11 @@ COPY package.json ./
 
 COPY yarn.lock ./
 
-RUN yarn
+RUN npm install
 
 COPY . .
 
-RUN yarn build
+RUN npm run build
 
 FROM node:alpine as production
 
@@ -20,7 +20,7 @@ COPY package*.json .
 
 COPY yarn.lock .
 
-RUN yarn
+RUN npm install
 
 COPY . .
 
